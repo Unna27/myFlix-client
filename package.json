@@ -2,7 +2,11 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "front end of myFlix app using React",
-  "scripts": {},
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Unna27/myFlix-client.git"
