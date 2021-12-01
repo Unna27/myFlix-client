@@ -41,16 +41,16 @@ List the ready features here:
 
 Technical Requirements:
 
-● The application must be a single-page application (SPA)
-● The application must use state routing to navigate between views and share URLs
-● The application must give users the option to filter movies
-● The application must give users the option to sort movies
-● The application must initially use Parcel as its build tool
-● The application must be written using the React library and in ES2015+
-● The application must be written with React Redux (hence respecting the Flux pattern)
-● The application must use Bootstrap as a UI library for styling and responsiveness
-● The application must contain a mix of class components and function components
-● The application may be hosted online
+- The application must be a single-page application (SPA)
+- The application must use state routing to navigate between views and share URLs
+- The application must give users the option to filter movies
+- The application must give users the option to sort movies
+- The application must initially use Parcel as its build tool
+- The application must be written using the React library and in ES2015+
+- The application must be written with React Redux (hence respecting the Flux pattern)
+- The application must use Bootstrap as a UI library for styling and responsiveness
+- The application must contain a mix of class components and function components
+- The application may be hosted online
 
 
 
@@ -65,13 +65,12 @@ Project is: _in progress_
 ## Room for Improvement
 
 Single movie view and all movies views
-● Allow users to see which actors star in which movies
-● Allow users to view more information about different movies, such as the release date and
-the movie rating
+- Allow users to see which actors star in which movies
+- Allow users to view more information about different movies, such as the release date and the movie rating
 Actors view
-● Allows users to view information about different actors
+- Allows users to view information about different actors
 Profile view, single movie view, and all movies view
-● Allow users to create a “To Watch” list in addition to their “Favorite Movies” list
+- Allow users to create a “To Watch” list in addition to their “Favorite Movies” list
 
 To do:
 - Feature to be added 1
