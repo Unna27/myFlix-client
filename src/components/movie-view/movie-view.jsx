@@ -1,6 +1,23 @@
 import React from 'react';
+import './movie-view.scss';
 
+// details of a single movie
 export class MovieView extends React.Component {
+    // function to log the key pressed
+    keypressCallback(event) {
+        console.log(event.key);
+    }
+
+    componentDidMount() {
+        // this listener logs all key press events in the console.
+        document.addEventListener('keypress', this.keypressCallback);
+    }
+
+    componentWillUnmount() {
+        // Remove the keypress listener when unmounting this component, else it will be actively listening for this event.
+        document.removeEventListener('keypress', this.keypressCallback);
+    }
+
     render() {
         const { movie, onBackClick } = this.props;
         return <div className="movie-view">

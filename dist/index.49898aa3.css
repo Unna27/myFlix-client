@@ -1,12 +1,31 @@
-.app-container {
-  margin: 0;
-  background: #ecf0f3;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+.movie-card {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  text-align: left;
 }
-
+.movie-view {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  text-align: left;
+}
+.container {
+  position: relative;
+  width: 350px;
+  height: 500px;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
 
 label, input, button {
   display: block;
@@ -51,8 +70,26 @@ button:hover {
   box-shadow: none;
 }
 .main-view {
-  background-color: lightpink;
+  position: relative;
+  width: 350px;
+  height: 500px;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
+.container {
+  position: relative;
+  width: 350px;
+  height: 500px;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+
 label, input, button {
   display: block;
   width: 100%;
@@ -95,4 +132,12 @@ button {
 button:hover {
   box-shadow: none;
 }
-/*# sourceMappingURL=index.1f6edfee.css.map */
+.app-container {
+  margin: 0;
+  background: #ecf0f3;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+}
+/*# sourceMappingURL=index.49898aa3.css.map */
