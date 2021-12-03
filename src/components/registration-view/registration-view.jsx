@@ -1,8 +1,9 @@
 import { useState } from "react";
 import React from 'react';
+import PropTypes from 'prop-types';
 import './registration-view.scss';
 
-export function RegistrationView(props) {
+function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -38,3 +39,10 @@ export function RegistrationView(props) {
         </form>
     );
 }
+
+// define the property types of the prop acquired
+RegistrationView.propTypes = {
+    setRegister: PropTypes.string.isRequired
+}
+
+export { RegistrationView };
