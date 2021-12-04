@@ -19,7 +19,7 @@ const RegistrationView = props => {
     }
 
     return (
-        <form class="container">
+        <form>
             <label>
                 Username:
                 <input type="text" placeholder="Enter Username" {...username}  />
