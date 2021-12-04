@@ -1,6 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import './movie-view.scss';
 
+// details of a single movie
 export class MovieView extends React.Component {
+    // function to log the key pressed
+    keypressCallback(event) {
+        console.log(event.key);
+    }
+
+    componentDidMount() {
+        // this listener logs all key press events in the console.
+        document.addEventListener('keypress', this.keypressCallback);
+    }
+
+    componentWillUnmount() {
+        // Remove the keypress listener when unmounting this component, else it will be actively listening for this event.
+        document.removeEventListener('keypress', this.keypressCallback);
+    }
+
     render() {
         const { movie, onBackClick } = this.props;
         return <div className="movie-view">
@@ -31,7 +49,30 @@ export class MovieView extends React.Component {
                 <span className="label">ReleaseDate: </span>
                 <span className="value">{movie.releaseDate}</span>
             </div>
+            <div className="movie-cast">
+                <span className="label">Cast: </span>
+                <span className="value">{movie.cast}</span>
+            </div>
             <button onClick={() => { onBackClick(null); }}>Back</button>
         </div>
     }
 }
+
+// define the property types of the prop acquired
+MovieView.propTypes = {
+    movie: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        imageURL: PropTypes.string.isRequired,
+        genres: PropTypes.shape({
+            name: PropTypes.string.isRequired
+        }),
+        director: PropTypes.shape({
+            name: PropTypes.string.isRequired
+        }),
+        rating: PropTypes.string,
+        releaseDate: PropTypes.instanceOf(Date),
+        cast: PropTypes.string
+    }).isRequired,
+    onBackClick: PropTypes.func.isRequired
+};
