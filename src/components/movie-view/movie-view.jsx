@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './movie-view.scss';
+//import './movie-view.scss';
 
 // details of a single movie
 export class MovieView extends React.Component {
@@ -70,7 +70,7 @@ MovieView.propTypes = {
         director: PropTypes.shape({
             name: PropTypes.string.isRequired
         }),
-        rating: PropTypes.string,
+        rating: PropTypes.Number,
         releaseDate: PropTypes.instanceOf(Date),
         cast: PropTypes.string
     }).isRequired,

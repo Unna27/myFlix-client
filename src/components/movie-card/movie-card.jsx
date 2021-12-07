@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'; // to check for a specific set of properties and types in props
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import './movie-card.scss';
+//import './movie-card.scss';
 
 // when there is no selected movie, movie card is being displayed with the list of all available movies
 class MovieCard extends React.Component {
@@ -36,7 +36,7 @@ MovieCard.propTypes = {
         director: PropTypes.shape({
             name: PropTypes.string.isRequired
         }),
-        rating: PropTypes.string,
+        rating: PropTypes.Number,
         releaseDate: PropTypes.instanceOf(Date),
         cast: PropTypes.string
     }).isRequired,
