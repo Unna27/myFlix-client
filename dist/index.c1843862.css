@@ -3,7 +3,10 @@
   color: #241e4e;
   font-weight: bold;
 }
-
+* {
+  color: #241e4e;
+  font-weight: bold;
+}
 .container {
   background: #ecf0f3;
   display: flex;

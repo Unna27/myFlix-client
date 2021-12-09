@@ -7,26 +7,23 @@ import Button from 'react-bootstrap/Button';
 // when there is no selected movie, movie card is being displayed with the list of all available movies
 class MovieCard extends React.Component {
     render() {
-        const { movieData, onMovieClick } = this.props; // acquire the state variables from main view
-
-        //return <div className="movie-card" onClick={() => { onMovieClick(movieData); }}>{movieData.title}</div>;
+        const { movie, onMovieClick } = this.props;
         return (
-             // display using Card bootstrap
-             <Card>
-             <Card.Img variant="top" src={movieData.imageURL} />
+            <Card>
+             <Card.Img variant="top" src={movie.imageURL} />
              <Card.Body>
-                 <Card.Title>{movieData.title}</Card.Title>
-                 <Card.Text>{movieData.description}</Card.Text>
-                 <Button onClick={() => onMovieClick(movieData)} variant="link">Open</Button>
+                 <Card.Title>{movie.title}</Card.Title>
+                 <Card.Text>{movie.description}</Card.Text>
+                 <Button onClick={() => onMovieClick(movie)} variant="link">Open</Button>
              </Card.Body>
              </Card>
         );
     }
 }
-
+//<Button onClick={() => onMovieClick(movieData)} variant="link">Open</Button>
 // define the property types of the prop acquired
 MovieCard.propTypes = {
-    movieData: PropTypes.shape({
+    movie: PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         imageURL: PropTypes.string.isRequired,

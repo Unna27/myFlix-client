@@ -5,75 +5,84 @@ import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootst
 import './registration-view.scss';
 
 const RegistrationView = props => {
-
     // added a custom hook useFormInputs to set all user fields and handle on Change event
     const username = useFormInputs('User1');
     const password = useFormInputs('');
     const email = useFormInputs('user1@gmail.com');
     const birthdate = useFormInputs('');
+    const [validated, setValidated] = useState(false);
 
     const handleSubmit = (e) => {
-          e.preventDefault();
+      e.preventDefault();
+      const form=e.currentTarget; // get handle to current form
+      if(form.checkValidity() === false) {
+            e.stopPropagation(); 
+      }else {
         console.log('registered');
         console.log(username.value, password.value, email.value, birthdate.value);
         // send to server for registering
         props.setRegister(true);
+      }
+      setValidated(true);
     }
 
     return (
         <Container>
-            <Row>
+            <Row className="align-items-center">
                 <Col>
-                    <CardGroup>
-                        <Card bg="light">
-                        <Card.Header>Registration Form </Card.Header>
-                            <Card.Body>
-                                  <Form>
-                                    <Form.Group>
-                                        <Form.Label>Username: </Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Enter Username (minimum length: 5)"
-                                            {...username}
-                                            minLength="5"
-                                            required
-                                        />
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label>Password:</Form.Label>
-                                        <Form.Control
-                                            type="password"
-                                            placeholder="Enter Password"
-                                            {...password}
-                                            required
-                                        />
-                                    </Form.Group>
+                <CardGroup>
+                    <Card bg="light">
+                    <Card.Header>Registration Form</Card.Header>
+                    <Card.Body>
+                        <Form id="myRegistration" noValidate validated={validated} onSubmit={handleSubmit}>
+                            <Form.Group>
+                              <Form.Label>Username: </Form.Label>
+                              <Form.Control
+                                  type="text"
+                                  placeholder="Enter Username (minimum length: 5)"
+                                  {...username}
+                                  minLength="5"
+                                  required
+                              />
+                              <Form.Control.Feedback type="invalid">Please enter a username - minimum length should be 5</Form.Control.Feedback>
+                            </Form.Group>
 
-                                    <Form.Group>
-                                        <Form.Label>E-mail:</Form.Label>
-                                        <Form.Control
-                                            type="email"
-                                            placeholder="Enter E-mail Id"
-                                            {...email}
-                                            required
-                                        />
-                                    </Form.Group>
+                            <Form.Group>
+                              <Form.Label>Password:</Form.Label>
+                              <Form.Control
+                                  type="password"
+                                  placeholder="Enter Password"
+                                  {...password}
+                                  required
+                              />
+                              <Form.Control.Feedback type="invalid">Please enter a valid password</Form.Control.Feedback>
+                            </Form.Group>
 
-                                    <Form.Group>
-                                        <Form.Label>Date of Birth:</Form.Label>
-                                        <Form.Control
-                                            type="date"
-                                            placeholder="Enter Date of Birth"
-                                            {...birthdate}
-                                        />
-                                    </Form.Group>
+                            <Form.Group>
+                              <Form.Label>E-mail:</Form.Label>
+                              <Form.Control
+                                  type="email"
+                                  placeholder="Enter E-mail Id"
+                                  {...email}
+                                  required
+                              />
+                              <Form.Control.Feedback type="invalid">Please enter a valid Email</Form.Control.Feedback>
+                            </Form.Group>
 
-                                    <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
-                                </Form>
-                            </Card.Body>
-                        </Card>
-                    </CardGroup>
+                            <Form.Group>
+                              <Form.Label>Date of Birth:</Form.Label>
+                              <Form.Control
+                                  type="date"
+                                  placeholder="Enter Date of Birth"
+                                  {...birthdate}
+                              />
+                            </Form.Group>
 
+                            <Button variant="primary" type="submit">Submit</Button>
+                        </Form>
+                    </Card.Body>
+                    </Card>
+                </CardGroup>
                 </Col>
             </Row>
         </Container>

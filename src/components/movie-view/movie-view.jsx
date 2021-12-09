@@ -57,7 +57,7 @@ export class MovieView extends React.Component {
         </div>
     }
 }
-
+//<button onClick={() => { onBackClick(null); }}>Back</button>
 // define the property types of the prop acquired
 MovieView.propTypes = {
     movie: PropTypes.shape({
