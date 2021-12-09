@@ -1,8 +1,10 @@
-.app-container {
-  margin: 0;
-  background: #ecf0f3;
-  display: flex;
-  align-items: center;
-  text-align: left;
-  justify-content: center;
- }
+$background-color : #ecf0f3;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;1,700&display=swap');
+
+.container {
+    background: $background-color;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+

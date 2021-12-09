@@ -7,7 +7,7 @@
         {
             "name": "Launch Edge",
             "request": "launch",
-            "type": "pwa-msedge",
+            "type": "vscode-edge-devtools.debug",
             "url": "http://localhost:1234",
             "webRoot": "${workspaceFolder}"
         },
