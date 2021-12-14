@@ -7,6 +7,15 @@
   color: #241e4e;
   font-weight: bold;
 }
+.movie-card {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  text-align: left;
+}
 .container {
   background: #ecf0f3;
   display: flex;

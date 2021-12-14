@@ -24,7 +24,8 @@ export function LoginView(props) {
         password: password
       }).then (response => {
         const data = response.data;
-        props.onLoggedIn(data); // sets the user State var in the main-view to the current logged in user details
+        props.onLoggedIn(data); 
+        window.open('/movies','_self').focus;// sets the user State var in the main-view to the current logged in user details
       }).catch(error =>{
         console.log("Authentication failed - " + error);
       })
@@ -35,7 +36,8 @@ export function LoginView(props) {
 
   const handleRegister = (e) => {
     console.log('open registration form');
-    props.setRegister(false); // sets the isRegistered State var to false
+    //props.setRegister(false); // sets the isRegistered State var to false
+     window.open('/register','_self');
   }
 
   return (
@@ -83,9 +85,9 @@ export function LoginView(props) {
                       <Button className='mt-2'
                         variant="primary"
                         type="button"
-                        onClick={handleRegister}>
-                        Register
-                      </Button>                    
+                         onClick={handleRegister}>
+                      Register
+                      </Button>                
                     </Col>
                   </Row>
 
