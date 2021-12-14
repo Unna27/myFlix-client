@@ -12,7 +12,7 @@ export default function Movie(props) {
   return (
     <Row>
       <Col md={8}>
-       <MovieView movie = {movie} onBackClick={() => history.goBack()} />
+       <MovieView movie = {movie} />
       </Col>
       <Outlet />
     </Row>

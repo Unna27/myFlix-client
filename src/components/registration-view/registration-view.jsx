@@ -1,15 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
 import './registration-view.scss';
 
 const RegistrationView = props => {
     // added a custom hook useFormInputs to set all user fields and handle on Change event
-    const username = useFormInputs('User1');
+    const username = useFormInputs('');
     const password = useFormInputs('');
-    const email = useFormInputs('user1@gmail.com');
+    const email = useFormInputs('');
     const birthdate = useFormInputs('');
     const [validated, setValidated] = useState(false);
 
@@ -19,8 +18,8 @@ const RegistrationView = props => {
       if(form.checkValidity() === false) {
             e.stopPropagation(); 
       }else {
-        console.log(username.value + password.value + email + birthdate);
-        // send to server for registering
+        console.log(username.value + password.value + email.value + birthdate.value);
+        // send to server for registering 
         axios.post('https://myflix-ur.herokuapp.com/users', {
         username: username.value,
         password: password.value,
@@ -30,6 +29,7 @@ const RegistrationView = props => {
         const data = response.data;
         console.log(data);
        // props.setRegister(true);
+        window.alert("Thank you for registering. Please login to continue.")
         window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
       }).catch(error =>{
         console.log("Registration failed - " + error);
@@ -64,6 +64,7 @@ const RegistrationView = props => {
                         <Form.Control
                           type="password"
                           placeholder="Enter Password"
+                          autoComplete="off"
                           {...password}
                           required
                         />

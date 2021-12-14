@@ -12,7 +12,7 @@ export default function Director(props) {
   return (
     <Row>
       <Col Col md={8}>
-        <DirectorView director = {director} onBackClick={() => history.goBack()} />
+        <DirectorView director = {director} />
       </Col>
     </Row>
   );

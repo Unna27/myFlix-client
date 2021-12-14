@@ -24,7 +24,7 @@ GenreView.propTypes = {
     genre: PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-    }).isRequired,
+    }).isRequired
 };
 
 export { GenreView };

@@ -11,22 +11,17 @@ import Movie from '../../routes/movie';
 import Genre from '../../routes/genre';
 import Director from '../../routes/director';
 import Logout from '../../routes/logout';
-//import './main-view.scss';
+import './main-view.scss';
 
 export class MainView extends React.Component {
     constructor() {
       super();
       this.state = {
         movies: [],
-        selectedMovie: null, // flag var to set the display (either movie view or movie card)
         user: null,
-        isRegistered: true
       }
-      this.selectedMovie=this.setSelectedMovie.bind(this);
       this.onLoggedIn=this.onLoggedIn.bind(this);
-      this.setRegister=this.setRegister.bind(this);
       this.getMovies=this.getMovies.bind(this);
-      this.onLoggedOut=this.onLoggedOut.bind(this);
     }
 
     // fetch movies list from API asynchronously
@@ -58,13 +53,6 @@ export class MainView extends React.Component {
       }
     }
 
-    // triggers when a movie is clicked and set the state var selectedMovie with the currently selected movie
-    setSelectedMovie(newSelectedMovie) {
-        this.setState({
-            selectedMovie: newSelectedMovie
-        });
-    }
-
     // triggers when a user successfully logs in and set the state var user to currently logged in username
     onLoggedIn(authData) {
       console.log(authData);
@@ -76,25 +64,8 @@ export class MainView extends React.Component {
       this.getMovies(authData.token);
     }
 
-    // set localStorage to null
-    onLoggedOut() {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      this.setState({
-        user: null
-      });
-      console.log("logged out");
-    }
-
-    // triggers when a user clicks on Register button and also when a user is successfully registered
-    setRegister(register) {
-        this.setState({
-            isRegistered: register
-        });
-    }
-
     render() {
-        const { user, isRegistered, movies } = this.state;
+        const { user, movies } = this.state;
 
          return (
            // if there is a selected movie, displays details of that movie, else displays the list of all movies
@@ -116,11 +87,12 @@ export class MainView extends React.Component {
                   <Route path="movies" element={<Movies movieData={this.state.movies}/>} />
                   <Route path="user" element={<LoginView onLoggedIn={user => { this.onLoggedIn(user) }}/>} />
                   <Route path="logout" element={<Logout onLoggedOut={()=> {this.onLoggedOut()}} />} />
+                  <Route path="movies/:title" element={<Movie movieData={this.state.movies} />} />
+                  <Route path="genres/:name" element={<Genre movieData={this.state.movies} />} />
+                  <Route path="directors/:name" element={<Director movieData={this.state.movies} />} />
                 </Route>
-                <Route path="movies/:title" element={<Movie movieData={this.state.movies} />} />
-                <Route path="genres/:name" element={<Genre movieData={this.state.movies} />} />
-                <Route path="directors/:name" element={<Director movieData={this.state.movies} />} />
-                <Route path="logout" element={<Logout onLoggedOut={()=> {this.onLoggedOut()}} />} />
+               
+                <Route path="logout" element={<Logout />} />
                 <Route
                   path="*"
                   element={

@@ -14,7 +14,7 @@ export function LoginView(props) {
     const form=e.currentTarget; // get handle to current form
     if(form.checkValidity() === false){
       console.log("input validation failed");
-      form.reportValidity();
+      //form.reportValidity();
       e.stopPropagation(); 
     }else{    
       console.log(username, password);
@@ -24,8 +24,8 @@ export function LoginView(props) {
         password: password
       }).then (response => {
         const data = response.data;
-        props.onLoggedIn(data); 
-        window.open('/home','_self').focus;// sets the user State var in the main-view to the current logged in user details
+        props.onLoggedIn(data); // sets the user State var in the main-view to the current logged in user details
+        window.open('/home','_self').focus;
       }).catch(error =>{
         console.log("Authentication failed - " + error);
       })

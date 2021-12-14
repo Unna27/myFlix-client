@@ -8,6 +8,7 @@ import { Card, Button, ListGroup } from 'react-bootstrap';
 class MovieView extends React.Component {
     render() {
         const { movie } = this.props;
+        
         return (
           <Card>
             <Card.Img variant="top" src={movie.imageURL} />
@@ -23,12 +24,12 @@ class MovieView extends React.Component {
                 <span className="value">{movie.cast}</span></ListGroup.Item>
               </ListGroup>
               <Link
-                to={`/genres/${movie.genres.name}`}
+                to={`/home/genres/${movie.genres.name}`}
               >
                 <Button variant="link">Genre</Button>
               </Link>
               <Link
-                to={`/directors/${movie.director.name}`}
+                to={`/home/directors/${movie.director.name}`}
                >
                 <Button variant="link">Director</Button>
               </Link>
@@ -51,8 +52,7 @@ MovieView.propTypes = {
             name: PropTypes.string.isRequired
         }),
         cast: PropTypes.array
-    }).isRequired,
-   
+    }).isRequired
 };
 
 export { MovieView };

@@ -12,7 +12,7 @@ export default function Genre(props) {
   return (
     <Row>
       <Col Col md={8}>
-        <GenreView genre = {genre} onBackClick={() => history.goBack()} />
+        <GenreView genre = {genre} />
       </Col>
     </Row>
   );

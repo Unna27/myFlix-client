@@ -17,7 +17,7 @@ class MovieCard extends React.Component {
                  <Card.Text>{movieData.description}</Card.Text>
                  <Link
                   style={{ display: "block", margin: "1rem 0" }}
-                  to={`/movies/${movieData.title}`}
+                  to={`/home/movies/${movieData.title}`}
                  >
                   <Button variant="link">Open</Button>
                 </Link>
@@ -42,7 +42,6 @@ MovieCard.propTypes = {
         rating: PropTypes.Number,
         releaseDate: PropTypes.instanceOf(Date),
         cast: PropTypes.string
-    }).isRequired,
-   
+    }).isRequired
 };
 export { MovieCard };
