@@ -30,7 +30,7 @@ const RegistrationView = props => {
         const data = response.data;
         console.log(data);
        // props.setRegister(true);
-        //window.open('/movies', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
+        window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
       }).catch(error =>{
         console.log("Registration failed - " + error);
       })

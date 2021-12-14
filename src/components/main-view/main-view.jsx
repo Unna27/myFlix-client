@@ -4,11 +4,8 @@ import { BrowserRouter as Router, Routes, Route, useParams, Link} from 'react-ro
 
 import { LoginView } from '../login-view/login-view';
 import RegistrationView from '../registration-view/registration-view';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Home from '../../routes/Home';
 import Welcome from '../../routes/welcome';
+import Home from '../../routes/Home';
 import { Movies } from '../../routes/movies';
 import Movie from '../../routes/movie';
 import Genre from '../../routes/genre';
@@ -42,8 +39,7 @@ export class MainView extends React.Component {
       }).then(response => {
         // assign the result to the state var movies
         console.log(response.data);
-            this.setState({ movies: response.data });
-           
+        this.setState({ movies: response.data });
         }).catch(error => {
             console.error();
         });
@@ -68,7 +64,6 @@ export class MainView extends React.Component {
             selectedMovie: newSelectedMovie
         });
     }
-
 
     // triggers when a user successfully logs in and set the state var user to currently logged in username
     onLoggedIn(authData) {
@@ -100,30 +95,32 @@ export class MainView extends React.Component {
 
     render() {
         const { user, isRegistered, movies } = this.state;
-        if (!user) return (<Col>
-               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-            </Col>);
-        if (movies.length === 0)
-            return <div className="main-view" />;
+
          return (
            // if there is a selected movie, displays details of that movie, else displays the list of all movies
             <Router>
               <Routes>
-                <Route path="/" element={<Home />} >
+                <Route path="/" element={<Welcome />} >
                   <Route
                       index
-                      element={<Movies movieData={this.state.movies}/>}
+                      element={<LoginView onLoggedIn={user => { this.onLoggedIn(user) }} />}
+                  />
+                  <Route path="login" element={<LoginView onLoggedIn={user => { this.onLoggedIn(user) }}/>} />
+                  <Route path="register" element={<RegistrationView />} />
+                </Route>
+                <Route path="home" element={<Home />}>
+                  <Route
+                      index
+                      element={<Movies movieData={this.state.movies}/>} 
                   />
                   <Route path="movies" element={<Movies movieData={this.state.movies}/>} />
                   <Route path="user" element={<LoginView onLoggedIn={user => { this.onLoggedIn(user) }}/>} />
                   <Route path="logout" element={<Logout onLoggedOut={()=> {this.onLoggedOut()}} />} />
                 </Route>
-                <Route path="login" element={<LoginView onLoggedIn={user => { this.onLoggedIn(user) }}/>} />
-                <Route path="register" element={<RegistrationView />} />
-                <Route path="movies" element={<Movies movieData={this.state.movies}/>} />
                 <Route path="movies/:title" element={<Movie movieData={this.state.movies} />} />
                 <Route path="genres/:name" element={<Genre movieData={this.state.movies} />} />
                 <Route path="directors/:name" element={<Director movieData={this.state.movies} />} />
+                <Route path="logout" element={<Logout onLoggedOut={()=> {this.onLoggedOut()}} />} />
                 <Route
                   path="*"
                   element={

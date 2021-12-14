@@ -7,13 +7,13 @@ export default function Home() {
       <Nav className='navbar navbar-default'>
         <div className='navbar-header'>My Flix
           <ul className='nav navbar-nav'>
-            <NavLink to="/movies" 
+            <NavLink to="/home/movies" 
               style={isActive => ({
               color: isActive ? "green" : "blue"
               })}
             >Movies</NavLink>
-            <NavLink to="/user">Profile</NavLink>
-            <NavLink to="/logout">Logout</NavLink>
+            <NavLink to="/home/user">Profile</NavLink>
+            <NavLink to="/home/logout">Logout</NavLink>
           </ul>
         </div>
       </Nav>

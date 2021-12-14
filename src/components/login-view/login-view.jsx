@@ -25,7 +25,7 @@ export function LoginView(props) {
       }).then (response => {
         const data = response.data;
         props.onLoggedIn(data); 
-        window.open('/movies','_self').focus;// sets the user State var in the main-view to the current logged in user details
+        window.open('/home','_self').focus;// sets the user State var in the main-view to the current logged in user details
       }).catch(error =>{
         console.log("Authentication failed - " + error);
       })
