@@ -2,7 +2,7 @@ import { Outlet, NavLink } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 
 export default function Welcome() {
-  return (
+   return (
     <div>
       <Nav className='navbar navbar-default'>
         <div className='navbar-header'>My Flix

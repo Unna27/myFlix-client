@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
-import './registration-view.scss';
+import './profile-view.scss';
 
-const RegistrationView = props => {
+const ProfileView = props => {
     // added a custom hook useFormInputs to set all user fields and handle on Change event
     const username = useFormInputs('');
     const password = useFormInputs('');
@@ -28,6 +28,7 @@ const RegistrationView = props => {
       }).then (response => {
         const data = response.data;
         console.log(data);
+       // props.setRegister(true);
         window.alert("Thank you for registering. Please login to continue.")
         window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
       }).catch(error =>{
@@ -36,8 +37,6 @@ const RegistrationView = props => {
     } 
     setValidated(true);
     };
-
-    if (props.userData) return window.open('/home','_self');
 
     return (
         <Container>
@@ -116,4 +115,4 @@ function useFormInputs(initialValue) {
     };
 }
 
-export default RegistrationView;
+export default ProfileView;

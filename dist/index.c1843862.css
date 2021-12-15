@@ -24,6 +24,10 @@
   background: #ecf0f3;
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
+* {
+  color: #241e4e;
+  font-weight: normal;
+}
 .container {
   background: #ecf0f3;
   display: flex;

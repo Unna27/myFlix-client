@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useParams, Link} from 'react-ro
 
 import { LoginView } from '../login-view/login-view';
 import RegistrationView from '../registration-view/registration-view';
+import ProfileView from '../profile-view/profile-view';
 import Welcome from '../../routes/welcome';
 import Home from '../../routes/Home';
 import { Movies } from '../../routes/movies';
@@ -57,11 +58,12 @@ export class MainView extends React.Component {
     onLoggedIn(authData) {
       console.log(authData);
       this.setState({
-          user: authData.user.username
+          user: authData.user
       });
       localStorage.setItem('token', authData.token);
-      localStorage.setItem('user', authData.user.username);
+      localStorage.setItem('user', authData.user);
       this.getMovies(authData.token);
+      window.open('/home', '_self');
     }
 
     render() {
@@ -76,8 +78,8 @@ export class MainView extends React.Component {
                       index
                       element={<LoginView onLoggedIn={user => { this.onLoggedIn(user) }} />}
                   />
-                  <Route path="login" element={<LoginView onLoggedIn={user => { this.onLoggedIn(user) }}/>} />
-                  <Route path="register" element={<RegistrationView />} />
+                  <Route path="login" element={<LoginView onLoggedIn={user => { this.onLoggedIn(user) }} />} />
+                  <Route path="register" element={<RegistrationView userData={this.state.user}/>} />
                 </Route>
                 <Route path="home" element={<Home />}>
                   <Route
@@ -85,8 +87,8 @@ export class MainView extends React.Component {
                       element={<Movies movieData={this.state.movies}/>} 
                   />
                   <Route path="movies" element={<Movies movieData={this.state.movies}/>} />
-                  <Route path="user" element={<LoginView onLoggedIn={user => { this.onLoggedIn(user) }}/>} />
-                  <Route path="logout" element={<Logout onLoggedOut={()=> {this.onLoggedOut()}} />} />
+                  <Route path="user" element={<ProfileView />} />
+                  <Route path="logout" element={<Logout />} />
                   <Route path="movies/:title" element={<Movie movieData={this.state.movies} />} />
                   <Route path="genres/:name" element={<Genre movieData={this.state.movies} />} />
                   <Route path="directors/:name" element={<Director movieData={this.state.movies} />} />

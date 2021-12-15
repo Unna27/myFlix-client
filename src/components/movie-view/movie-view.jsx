@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, Button, ListGroup } from 'react-bootstrap';
 //import './movie-view.scss';
 
 // details of a single movie
 class MovieView extends React.Component {
-    render() {
-        const { movie } = this.props;
-        
-        return (
+  render() {
+    const { movie } = this.props;
+     console.log("inside movieview"+ movie.description);
+       return (
           <Card>
             <Card.Img variant="top" src={movie.imageURL} />
             <Card.Body>
@@ -33,10 +33,12 @@ class MovieView extends React.Component {
                >
                 <Button variant="link">Director</Button>
               </Link>
+              
             </Card.Body>
           </Card>
         );
-     }
+  }
+    
 }
 
 // define the property types of the prop acquired

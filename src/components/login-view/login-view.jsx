@@ -25,7 +25,6 @@ export function LoginView(props) {
       }).then (response => {
         const data = response.data;
         props.onLoggedIn(data); // sets the user State var in the main-view to the current logged in user details
-        window.open('/home','_self').focus;
       }).catch(error =>{
         console.log("Authentication failed - " + error);
       })
@@ -36,10 +35,12 @@ export function LoginView(props) {
 
   const handleRegister = (e) => {
     console.log('open registration form');
-    //props.setRegister(false); // sets the isRegistered State var to false
-     window.open('/register','_self');
+    window.open('/register','_self');
   }
 
+  let loggedinUser =  window.localStorage.getItem('user');
+  if(loggedinUser) return window.open('/home','_self');
+  
   return (
     <Container> 
       <Row className="align-items-center">
