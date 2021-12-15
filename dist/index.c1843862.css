@@ -28,6 +28,10 @@
   color: #241e4e;
   font-weight: normal;
 }
+
+button.hidden {
+  display: none;
+}
 .container {
   background: #ecf0f3;
   display: flex;

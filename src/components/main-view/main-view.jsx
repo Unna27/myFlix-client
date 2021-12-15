@@ -57,11 +57,9 @@ export class MainView extends React.Component {
     // triggers when a user successfully logs in and set the state var user to currently logged in username
     onLoggedIn(authData) {
       console.log(authData);
-      this.setState({
-          user: authData.user
-      });
+      this.setState({ user: authData.user });
       localStorage.setItem('token', authData.token);
-      localStorage.setItem('user', authData.user);
+      localStorage.setItem('user',  JSON.stringify(authData.user));
       this.getMovies(authData.token);
       window.open('/home', '_self');
     }
@@ -87,7 +85,7 @@ export class MainView extends React.Component {
                       element={<Movies movieData={this.state.movies}/>} 
                   />
                   <Route path="movies" element={<Movies movieData={this.state.movies}/>} />
-                  <Route path="user" element={<ProfileView />} />
+                  <Route path="user" element={<ProfileView userData={this.state.user} />} />
                   <Route path="logout" element={<Logout />} />
                   <Route path="movies/:title" element={<Movie movieData={this.state.movies} />} />
                   <Route path="genres/:name" element={<Genre movieData={this.state.movies} />} />
