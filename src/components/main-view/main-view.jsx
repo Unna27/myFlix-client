@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios'; // for async opns
-import { BrowserRouter as Router, Routes, Route, useParams, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Redirect } from 'react-router-dom';
 
+import { Menubar } from '../../routes/navbar/navbar';
 import { LoginView } from '../login-view/login-view';
 import RegistrationView from '../registration-view/registration-view';
 import ProfileView from '../profile-view/profile-view';
@@ -20,9 +21,10 @@ export class MainView extends React.Component {
       this.state = {
         movies: [],
         user: null,
+        userDetails: {}
       }
-      this.onLoggedIn=this.onLoggedIn.bind(this);
-      this.getMovies=this.getMovies.bind(this);
+      //this.onLoggedIn=this.onLoggedIn.bind(this);
+      //this.getMovies=this.getMovies.bind(this);
     }
 
     // fetch movies list from API asynchronously
@@ -37,7 +39,7 @@ export class MainView extends React.Component {
         console.log(response.data);
         this.setState({ movies: response.data });
         }).catch(error => {
-            console.error();
+            console.error(error);
         });
     }
 
@@ -57,18 +59,19 @@ export class MainView extends React.Component {
     // triggers when a user successfully logs in and set the state var user to currently logged in username
     onLoggedIn(authData) {
       console.log(authData);
-      this.setState({ user: authData.user });
+      this.setState({ user: authData.user.username });
+      this.setState({ userDetails: authData.user }); // user object
       localStorage.setItem('token', authData.token);
-      localStorage.setItem('user',  JSON.stringify(authData.user));
+      localStorage.setItem('user',  authData.user.username);
       this.getMovies(authData.token);
-      window.open('/home', '_self');
+      //window.open('/home', '_self');
     }
 
     render() {
-        const { user, movies } = this.state;
+        const { user, movies, userDetails } = this.state;
 
          return (
-           // if there is a selected movie, displays details of that movie, else displays the list of all movies
+  // if there is a selected movie, displays details of that movie, else displays the list of all movies
             <Router>
               <Routes>
                 <Route path="/" element={<Welcome />} >

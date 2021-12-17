@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
 import './registration-view.scss';
 
-const RegistrationView = props => {
+const RegistrationView = () => {
     // added a custom hook useFormInputs to set all user fields and handle on Change event
     const username = useFormInputs('');
     const password = useFormInputs('');
@@ -37,7 +37,8 @@ const RegistrationView = props => {
     setValidated(true);
     };
 
-    if (props.userData) return window.open('/home','_self');
+    let loggedinUser =  window.localStorage.getItem('user');
+    if(loggedinUser) return window.open('/movies','_self');
 
     return (
         <Container>

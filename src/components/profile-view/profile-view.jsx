@@ -1,19 +1,24 @@
 import React from 'react';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+import Home from '../../routes/Home';
+
 import './profile-view.scss';
 
-const ProfileView = props => {
+const ProfileView = () => {
   const user = JSON.parse(window.localStorage.getItem('user'));
-  if(!user) return <Welcome />
-
+  if(!user) return <Home />
+  
   const token = window.localStorage.getItem('token');
+
   // added a custom hook useFormInputs to set all user fields and handle on Change event
   //const username = useFormInputs(user.username);
   //const password = useFormInputs(user.password);
+  const bDate = new Date(user.birthdate).toLocaleDateString('en-CA');
+  console.log(bDate);
   const email = useFormInputs(user.email);
-  const birthdate = useFormInputs(user.birthdate);
+  const birthdate = useFormInputs(bDate);
   const [isDisabled, setIsDisabled] = useState(true);
   const [validated, setValidated] = useState(false); // to check input validation
   console.log(user);

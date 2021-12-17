@@ -5,9 +5,8 @@ import { Card, Button, ListGroup } from 'react-bootstrap';
 //import './movie-view.scss';
 
 // details of a single movie
-class MovieView extends React.Component {
-  render() {
-    const { movie } = this.props;
+export function MovieView ({movie}) {
+   let navigate = useNavigate();
      console.log("inside movieview"+ movie.description);
        return (
           <Card>
@@ -24,20 +23,19 @@ class MovieView extends React.Component {
                 <span className="value">{movie.cast}</span></ListGroup.Item>
               </ListGroup>
               <Link
-                to={`/home/genres/${movie.genres.name}`}
+                to={`/genres/${movie.genres.name}`}
               >
                 <Button variant="link">Genre</Button>
               </Link>
               <Link
-                to={`/home/directors/${movie.director.name}`}
+                to={`/directors/${movie.director.name}`}
                >
                 <Button variant="link">Director</Button>
               </Link>
-              
+              <Button onClick={() => {navigate(-1)}}>Back</Button>
             </Card.Body>
           </Card>
         );
-  }
     
 }
 
@@ -56,5 +54,3 @@ MovieView.propTypes = {
         cast: PropTypes.array
     }).isRequired
 };
-
-export { MovieView };

@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
 import './login-view.scss';
 
-export function LoginView(props) {
+export function LoginView() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [validated, setValidated] = useState(false); // to check input validation
-
+  
   const handleSubmit = (e) => {
     e.preventDefault(); // prevents the form from refreshing
     const form=e.currentTarget; // get handle to current form
@@ -23,8 +23,11 @@ export function LoginView(props) {
         username: username,
         password: password
       }).then (response => {
-        const data = response.data;
-        props.onLoggedIn(data); // sets the user State var in the main-view to the current logged in user details
+      const data = response.data;
+      //onLoggedIn(data); // sets the user State var in the main-view to the current logged in user details
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user',  JSON.stringify(data.user));
+      window.open('/movies','_self');
       }).catch(error =>{
         console.log("Authentication failed - " + error);
       })
@@ -35,12 +38,12 @@ export function LoginView(props) {
 
   const handleRegister = (e) => {
     console.log('open registration form');
-    window.open('/register','_self');
+    navigate("/register");
   }
 
   let loggedinUser =  window.localStorage.getItem('user');
-  if(loggedinUser) return window.open('/home','_self');
-  
+  if(loggedinUser) return window.open('/movies','_self');
+
   return (
     <Container> 
       <Row className="align-items-center">

@@ -1,10 +1,11 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { MovieCard } from "../components/movie-card/movie-card";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Nav } from 'react-bootstrap';
 
-export function Movies(props) {
-  let movies = props.movieData;
+export function Movies({movies}) {
+  
   console.log("inside moviesroute"+ movies);
   if (movies.length === 0)
     return <p>You must be logged in to view data</p>
@@ -16,6 +17,5 @@ export function Movies(props) {
           </Col>
          ))}
       </Row>
- 
   );
 }

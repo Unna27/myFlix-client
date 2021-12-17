@@ -1,7 +1,9 @@
-export default function Logout() {
-  window.localStorage.clear();
-   window.alert("Logged Out");
-   window.open('/','_self');
-  return null;
+import { useNavigate } from "react-router-dom";
+
+export default function Logout({onLoggedOut}) {
+  const navigate = useNavigate();
+  localStorage.clear();
+  onLoggedOut();
+  window.open('/','_self');
  
 }

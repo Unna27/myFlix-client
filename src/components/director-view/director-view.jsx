@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 //import './director-view.scss';
 
 // details of a single director
-export class DirectorView extends React.Component {
-    render() {
-        const { director } = this.props;
-        return <div className="director-view">
+export function DirectorView ({director}) {
+  let navigate= useNavigate();
+  return (
+            <div className="director-view">
             <div className="director-name">
                 <span className="label">Name: </span>
                 <span className="value">{director.name}</span>
@@ -23,8 +24,10 @@ export class DirectorView extends React.Component {
                 <span className="label">Death-Date: </span>
                 <span className="value">{director.deathDate}</span>
             </div>
+            <button onClick={() => {navigate(-1)}}>Back</button>
         </div>
-     }
+        );
+        
 }
 
 // define the property types of the prop acquired

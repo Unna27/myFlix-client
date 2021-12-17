@@ -6,9 +6,10 @@ import Button from 'react-bootstrap/Button';
 import './movie-card.scss';
 
 // when there is no selected movie, movie card is being displayed with the list of all available movies
-class MovieCard extends React.Component {
-    render() {
-        const { movieData } = this.props;
+export function MovieCard ({movieData}) {
+
+ console.log(movieData);
+
         return (
             <Card>
              <Card.Img variant="top" src={movieData.imageURL} />
@@ -17,14 +18,16 @@ class MovieCard extends React.Component {
                  <Card.Text>{movieData.description}</Card.Text>
                  <Link
                   style={{ display: "block", margin: "1rem 0" }}
-                  to={`/home/movies/${movieData.title}`}
+                  to={`/movies/${movieData.title}`}
                  >
                   <Button variant="link">Open</Button>
                 </Link>
              </Card.Body>
              </Card>
         );
-    }
+   
+      
+    
 }
 
 // define the property types of the prop acquired
@@ -44,4 +47,4 @@ MovieCard.propTypes = {
         cast: PropTypes.string
     }).isRequired
 };
-export { MovieCard };
+

@@ -3,9 +3,9 @@ import { DirectorView } from "../components/director-view/director-view";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-export default function Director(props) {
+export default function Director({movieData}) {
   let params = useParams();
-  let director = props.movieData.find(
+  let director = movieData.find(
     movie => movie.director.name === params.name
   ).director;
   console.log("inside director" + director);
