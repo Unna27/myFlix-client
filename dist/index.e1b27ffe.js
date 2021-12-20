@@ -40384,7 +40384,7 @@ function GenreView({ genre  }) {
                     })
                 ]
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_bootstrap.Button, {
+            /*#__PURE__*/ _jsxRuntime.jsx("button", {
                 type: "button",
                 onClick: ()=>{
                     navigate(-1);
@@ -44384,7 +44384,7 @@ function DirectorView({ director  }) {
                     })
                 ]
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_bootstrap.Button, {
+            /*#__PURE__*/ _jsxRuntime.jsx("button", {
                 type: "button",
                 onClick: ()=>{
                     navigate(-1);

@@ -25,7 +25,7 @@ export function DirectorView ({director}) {
                 <span className="label">Death-Date: </span>
                 <span className="value">{director.deathDate}</span>
             </div>
-            <Button type="button" onClick={() => {navigate(-1)}}>Back</Button>
+            <button type="button" onClick={() => {navigate(-1)}}>Back</button>
         </div>
         );
         

@@ -17,7 +17,7 @@ export function GenreView ({genre}) {
                 <span className="label">Description: </span>
                 <span className="value">{genre.description}</span>
             </div>
-            <Button type="button" onClick={() => {navigate(-1)}}>Back</Button>
+            <button type="button" onClick={() => {navigate(-1)}}>Back</button>
         </div>
   );
 }
