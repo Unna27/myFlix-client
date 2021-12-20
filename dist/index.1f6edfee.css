@@ -1,4 +1,7 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;1,700&display=swap";
+body {
+  background-color: #F6F3EE !important;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -20,6 +23,13 @@
   outline: none;
   box-sizing: border-box;
   text-align: left;
+}
+.card {
+  margin: 5px;
+}
+
+img.card-img-top {
+  width: 100px;
 }
 * {
   color: #241e4e;

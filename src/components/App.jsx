@@ -11,8 +11,10 @@ import Movie from '../routes/movie';
 import Genre from '../routes/genre';
 import Director from '../routes/director';
 import Profile from '../routes/profile';
+import Logout from '../routes/logout';
 
 export default function App() {
+  
    const [movies, setMovies] = useState("");
   
   useEffect(()=>{
@@ -43,11 +45,20 @@ export default function App() {
          />
          <Route path="login" element={<LoginView />} />
          <Route path="register" element={<RegistrationView />} />
-         <Route path="users/:username" element={<Profile />} />
+         <Route path="users/:username" element={<Profile movies={movies} />} />
+        
          <Route path="movies" element={<Movies movies={movies} />} />
-         <Route path="movies/:title" element={<Movie movieData={movies} />} />                
+         <Route path="movies/:id" element={<Movie movieData={movies} />} />                
          <Route path="genres/:name" element={<Genre movieData={movies} />} />
          <Route path="directors/:name" element={<Director movieData={movies} />} />
+          <Route path="logout" element={<Logout />} />
+         <Route path="*" 
+                element={
+                          <main style={{ padding: "1rem" }}>
+                          <p>There's nothing here!</p>
+                          </main>
+                        }
+          />
       </Route>
     </Routes>
     </>

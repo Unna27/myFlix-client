@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { Button } from 'bootstrap';
 //import './director-view.scss';
 
 // details of a single director
@@ -24,7 +25,7 @@ export function DirectorView ({director}) {
                 <span className="label">Death-Date: </span>
                 <span className="value">{director.deathDate}</span>
             </div>
-            <button onClick={() => {navigate(-1)}}>Back</button>
+            <Button type="button" onClick={() => {navigate(-1)}}>Back</Button>
         </div>
         );
         

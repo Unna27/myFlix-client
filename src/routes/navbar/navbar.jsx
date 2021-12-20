@@ -3,13 +3,13 @@ import { Nav, Navbar, Container, Button } from 'react-bootstrap';
 
 export function Menubar() {
   const [username,setUsername] = useState();
-
+  /*
   const onLoggedOut = () => {
     window.localStorage.clear();
     console.log("Logged Out");
     window.open('/','_self');
    }
-
+*/
   const isAuth = () => {
     if(typeof window == "undefined"){
       return false;
@@ -37,7 +37,10 @@ export function Menubar() {
               <Nav.Link href={`/users/${username}`} color="blue">{username} Profile</Nav.Link>
             )}
             {isAuth() && (
-              <Button variant="link" onClick={()=>{ onLoggedOut() }}>Logout </Button>
+              <Nav.Link href={'/movies'} color="blue">All Movies</Nav.Link>
+            )}
+            {isAuth() && (
+              <Nav.Link href={'/logout'} color="blue">Logout</Nav.Link>
             )}
             {!isAuth() && (
               <Nav.Link href={'/'}>Login</Nav.Link>

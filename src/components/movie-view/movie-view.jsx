@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
 import { Card, Button, ListGroup } from 'react-bootstrap';
-//import './movie-view.scss';
+import './movie-view.scss';
 
 // details of a single movie
 export function MovieView ({movie}) {

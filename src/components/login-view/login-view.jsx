@@ -2,12 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './login-view.scss';
 
 export function LoginView() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [validated, setValidated] = useState(false); // to check input validation
+  
+  const navigate=useNavigate();
   
   const handleSubmit = (e) => {
     e.preventDefault(); // prevents the form from refreshing
@@ -30,6 +33,8 @@ export function LoginView() {
       window.open('/movies','_self');
       }).catch(error =>{
         console.log("Authentication failed - " + error);
+        window.alert("User details not correct");
+        window.open('/','_self');
       })
     }
     // set the validated props to true so that the form.control.feedback messages will be displayed  

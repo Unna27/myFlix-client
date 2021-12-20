@@ -13,7 +13,7 @@ export function Movies({movies}) {
       <Row className="justify-content-md-center">
         {movies.map(movie => (
           <Col md={3} key={movie._id} >
-            <MovieCard movieData = {movie} />
+            <MovieCard movieData = {movie} isRemoveFlag = {false} />
           </Col>
          ))}
       </Row>

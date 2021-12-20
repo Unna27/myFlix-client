@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { Button } from 'bootstrap';
 //import './genre-view.scss';
 
 // details of a genre
@@ -16,7 +17,7 @@ export function GenreView ({genre}) {
                 <span className="label">Description: </span>
                 <span className="value">{genre.description}</span>
             </div>
-            <button onClick={() => {navigate(-1)}}>Back</button>
+            <Button type="button" onClick={() => {navigate(-1)}}>Back</Button>
         </div>
   );
 }

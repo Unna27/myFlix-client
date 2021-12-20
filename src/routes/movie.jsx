@@ -7,9 +7,9 @@ export default function Movie({movieData}) {
   let params = useParams();
   console.log(movieData);
   let movie = movieData.find(
-    movie => movie.title === params.title
+    movie => movie._id === params.id
   );
-  console.log("inside movieroute" + movie.title);
+  console.log("inside movieroute" + movie._id);
   return (
     <Row>
       <Col md={8}>
