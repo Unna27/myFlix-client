@@ -70,26 +70,23 @@ axios({
     */
 }
 
- console.log(movieData);
-
-        return (
-            <Card>
-             <Card.Img variant="top" src={movieData.imageURL} />
-             <Card.Body>
-                 <Card.Title>{movieData.title}</Card.Title>
-                 <Link
-                  style={{ display: "block", margin: "1rem 0" }}
-                  to={`/movies/${movieData._id}`}
-                 >
-                  <Button variant="link">Open</Button>
-                </Link>
-                <Button className={isRemoveFlag ? '' : 'hidden'}  type="button" onClick={handleRemove}> Remove </Button>
-                <Button className={isRemoveFlag ? 'hidden' : ''}  type="button" onClick={handleAdd}> Add to Favorites</Button>
-             </Card.Body>
-             </Card>
-        );
-   
-      
+console.log(movieData);
+return (
+  <Card>
+    <Card.Img variant="top" src={movieData.imageURL} />
+    <Card.Body>
+      <Card.Title>{movieData.title}</Card.Title>
+      <Link
+          style={{ display: "block", margin: "1rem 0" }}
+          to={`/movies/${movieData._id}`}
+      >
+      <Button variant="link">Open</Button>
+      </Link>
+      <Button className={isRemoveFlag ? '' : 'hidden'}  type="button" onClick={handleRemove}> Remove </Button>
+      <Button className={isRemoveFlag ? 'hidden' : ''}  type="button" onClick={handleAdd}> Add to Favorites</Button>
+    </Card.Body>
+  </Card>
+);
     
 }
 

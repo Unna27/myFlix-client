@@ -1,11 +1,17 @@
 import * as React from 'react';
 import {useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios'; // for async opns
-import { Routes, Route, Link, useNavigate, useLocation, Navigate } from 'react-router-dom';
+
+import { connect } from 'react-redux';
+
+import { Routes, Route } from 'react-router-dom';
 
 import Home from '../routes/Home';
 import { LoginView } from './login-view/login-view';
 import RegistrationView from './registration-view/registration-view';
+
+import { setMovies } from '../actions/actions';
 import { Movies } from '../routes/movies';
 import Movie from '../routes/movie';
 import Genre from '../routes/genre';
@@ -13,10 +19,10 @@ import Director from '../routes/director';
 import Profile from '../routes/profile';
 import Logout from '../routes/logout';
 
-export default function App() {
+  const App = () => {
   
-   const [movies, setMovies] = useState("");
-  
+   //const [movies, setMovies] = useState("");
+  const dispatch = useDispatch();
   useEffect(()=>{
     // fetch movies list from API asynchronously
     // local host link = http://localhost:8080/movies
@@ -28,12 +34,14 @@ export default function App() {
     }).then(response => {
       // assign the result to the state var movies
       console.log(response.data);
-      setMovies(response.data);
+      dispatch(setMovies(response.data));
       }).catch(error => {
          console.error();
       })
     }
-  },[]);
+  },[dispatch])
+  
+  const movies = useSelector((state) => state.movies);
 
   return(
     <>
@@ -64,3 +72,5 @@ export default function App() {
     </>
   );
 }
+
+export default App;
