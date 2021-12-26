@@ -15,12 +15,18 @@ export function MovieView ({movie}) {
               <Card.Title>{movie.title}</Card.Title>
               <Card.Text>{movie.description}</Card.Text>
               <ListGroup variant="flush">
-                <ListGroup.Item><span className="label">Rating: </span>
-                <span className="value">{movie.rating}</span></ListGroup.Item>
-                <ListGroup.Item><span className="label">ReleaseDate: </span>
-                <span className="value">{movie.releaseDate}</span></ListGroup.Item>
-                <ListGroup.Item><span className="label">Cast: </span>
-                <span className="value">{movie.cast}</span></ListGroup.Item>
+                <ListGroup.Item>
+                  <span className="label">Rating: </span>
+                  <span className="value">{movie.rating}</span>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <span className="label">ReleaseDate: </span>
+                  <span className="value">{movie.releaseDate}</span>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <span className="label">Cast: </span>
+                  <span className="value">{movie.cast}</span>
+                </ListGroup.Item>
               </ListGroup>
               <Link
                 to={`/genres/${movie.genres.name}`}

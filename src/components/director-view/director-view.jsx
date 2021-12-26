@@ -1,33 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { Button } from 'bootstrap';
-//import './director-view.scss';
+import { Card, Button, ListGroup, ListGroupItem } from 'react-bootstrap';
+
+import './director-view.scss';
 
 // details of a single director
 export function DirectorView ({director}) {
   let navigate= useNavigate();
+  let isDisplay = false;
+
+  if(director.deathDate!== null) isDisplay = true;
+
   return (
-            <div className="director-view">
-            <div className="director-name">
-                <span className="label">Name: </span>
-                <span className="value">{director.name}</span>
-            </div>
-            <div className="director-bio">
-                <span className="label">Bio: </span>
-                <span className="value">{director.bio}</span>
-            </div>
-            <div className="director-birthdate">
-                <span className="label">Birth-Date: </span>
-                <span className="value">{director.birthDate}</span>
-            </div>
-            <div className="director-deathdate">
-                <span className="label">Death-Date: </span>
-                <span className="value">{director.deathDate}</span>
-            </div>
-            <button type="button" onClick={() => {navigate(-1)}}>Back</button>
-        </div>
-        );
+    <Card>
+      <Card.Header>Director View</Card.Header>
+      <Card.Body>
+        <Card.Title>{director.name}</Card.Title>
+        <Card.Text>{director.bio}</Card.Text>
+        <ListGroup className="list-group-flush">
+          <ListGroupItem>
+              <span className="label">Birth-Date: </span>
+              <span className="value">{director.birthDate}</span>
+          </ListGroupItem>
+          <ListGroupItem className={isDisplay ? '' : 'hidden'}>
+            <span className="label">Death-Date: </span>
+            <span className="value">{director.deathDate}</span>
+          </ListGroupItem>
+        </ListGroup>
+        <Button type="button" onClick={() => {navigate(-1)}}>Back</Button>
+      </Card.Body>
+    </Card>
+  );
         
 }
 

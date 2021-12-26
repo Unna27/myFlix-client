@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { useEffect } from 'react';
 import './movie-card.scss';
 
 // when there is no selected movie, movie card is being displayed with the list of all available movies
@@ -71,6 +72,7 @@ axios({
 }
 
 console.log(movieData);
+console.log("Flag"+ isRemoveFlag);
 return (
   <Card>
     <Card.Img variant="top" src={movieData.imageURL} />
@@ -83,7 +85,7 @@ return (
       <Button variant="link">Open</Button>
       </Link>
       <Button className={isRemoveFlag ? '' : 'hidden'}  type="button" onClick={handleRemove}> Remove </Button>
-      <Button className={isRemoveFlag ? 'hidden' : ''}  type="button" onClick={handleAdd}> Add to Favorites</Button>
+      <Button className={isRemoveFlag ? 'hidden' : ''}  type="button" onClick={handleAdd}> Add to Favorites </Button>
     </Card.Body>
   </Card>
 );
@@ -102,9 +104,10 @@ MovieCard.propTypes = {
         director: PropTypes.shape({
             name: PropTypes.string.isRequired
         }),
-        rating: PropTypes.Number,
+        rating: PropTypes.number,
         releaseDate: PropTypes.instanceOf(Date),
         cast: PropTypes.string
-    }).isRequired
+    }).isRequired,
+    isRemoveFlag: PropTypes.bool
 };
 

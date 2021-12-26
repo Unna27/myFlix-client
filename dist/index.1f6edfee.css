@@ -15,14 +15,8 @@ body {
   color: #241e4e;
   font-weight: normal;
 }
-.movie-card {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-  text-align: left;
+button.hidden {
+  display: none;
 }
 .card {
   margin: 5px;
@@ -30,6 +24,10 @@ body {
 
 img.card-img-top {
   width: 100px;
+}
+div.hidden {
+  display: none;
+  border: none;
 }
 * {
   color: #241e4e;

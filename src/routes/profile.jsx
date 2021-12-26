@@ -46,11 +46,11 @@ const handleUnregister = () =>{
   const favMoviesList = movies.filter(getMovie);
   return (
     <>
-      <Row>
-        <Col>
+      <Row className="justify-content-md-center">
+        <Col md={8}>
           <ProfileView user={user} />
         </Col>
-        <Col>
+        <Col md={2}>
           <Button type="button" onClick={handleUnregister}> Unregister </Button>
         </Col>
       </Row>

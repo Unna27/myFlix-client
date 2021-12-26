@@ -1,24 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { Button } from 'bootstrap';
+import { Card, Button } from 'react-bootstrap';
 //import './genre-view.scss';
 
 // details of a genre
 export function GenreView ({genre}) {
   let navigate = useNavigate();
   return (
-        <div className="genre-view">
-            <div className="genre-title">
-                <span className="label">Title: </span>
-                <span className="value">{genre.name}</span>
-            </div>
-            <div className="genre-description">
-                <span className="label">Description: </span>
-                <span className="value">{genre.description}</span>
-            </div>
-            <button type="button" onClick={() => {navigate(-1)}}>Back</button>
-        </div>
+    <Card>
+      <Card.Header>Genre View</Card.Header>
+      <Card.Body>
+        <Card.Title>{genre.name}</Card.Title>
+        <Card.Text>{genre.description}</Card.Text>
+        <Button type="button" onClick={() => {navigate(-1)}}>Back</Button>
+      </Card.Body>
+    </Card>
   );
 }
 
