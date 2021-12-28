@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import PropTypes from 'prop-types';
 import { MovieCard } from '../components/movie-card/movie-card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -8,7 +7,10 @@ import VisibilityFilterInput from '../components/visibility-filter-input/visibil
 
 export function Movies({movies}) {
   const visibilityFilter = useSelector((state) => state.visibilityFilter);
-  
+  const user = useSelector(state=> state.user);
+  if(user.length === 0)
+    return <p>Please login to view data</p>
+
   if (movies.length === 0)
     return <p>Data is being loaded...</p>
   
@@ -33,3 +35,8 @@ export function Movies({movies}) {
       </Row>
   );
 }
+
+// define the property types of the prop acquired
+Movies.PropTypes = {
+  movies: PropTypes.array.isRequired
+};

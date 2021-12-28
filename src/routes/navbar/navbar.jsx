@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Nav, Navbar, Container, Button } from 'react-bootstrap';
+import { Nav, Navbar, Container } from 'react-bootstrap';
 
 export function Menubar() {
   const [username,setUsername] = useState();
-  /*
-  const onLoggedOut = () => {
-    window.localStorage.clear();
-    console.log("Logged Out");
-    window.open('/','_self');
-   }
-*/
+
   const isAuth = () => {
     if(typeof window == "undefined"){
       return false;

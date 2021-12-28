@@ -29,6 +29,10 @@ div.hidden {
   display: none;
   border: none;
 }
+
+.btn {
+  margin: 5px;
+}
 * {
   color: #241e4e;
   font-weight: normal;

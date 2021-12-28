@@ -18,8 +18,6 @@ const ProfileView = ({user}) => {
   const [isDisabled, setIsDisabled] = useState(true);
   const [validated, setValidated] = useState(false); // to check input validation
 
-  console.log(user);
-
   const handleClick = () => {
     setIsDisabled(!isDisabled)
   };

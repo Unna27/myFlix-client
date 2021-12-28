@@ -21,11 +21,11 @@ export function DirectorView ({director}) {
         <ListGroup className="list-group-flush">
           <ListGroupItem>
               <span className="label">Birth-Date: </span>
-              <span className="value">{director.birthDate}</span>
+              <span className="value">{new Date(director.birthDate).toLocaleDateString('en-CA')}</span>
           </ListGroupItem>
           <ListGroupItem className={isDisplay ? '' : 'hidden'}>
             <span className="label">Death-Date: </span>
-            <span className="value">{director.deathDate}</span>
+            <span className="value">{new Date(director.deathDate).toLocaleDateString('en-CA')}</span>
           </ListGroupItem>
         </ListGroup>
         <Button type="button" onClick={() => {navigate(-1)}}>Back</Button>

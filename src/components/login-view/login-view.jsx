@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
+
 import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './login-view.scss';
@@ -11,7 +12,7 @@ export function LoginView() {
   const [validated, setValidated] = useState(false); // to check input validation
   
   const navigate=useNavigate();
-  
+
   const handleSubmit = (e) => {
     e.preventDefault(); // prevents the form from refreshing
     const form=e.currentTarget; // get handle to current form
@@ -26,11 +27,10 @@ export function LoginView() {
         username: username,
         password: password
       }).then (response => {
-      const data = response.data;
-      //onLoggedIn(data); // sets the user State var in the main-view to the current logged in user details
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user',  JSON.stringify(data.user));
-      window.open('/movies','_self');
+        const data = response.data;
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user',  JSON.stringify(data.user));
+        window.open('/movies','_self');
       }).catch(error =>{
         console.log("Authentication failed - " + error);
         window.alert("User details not correct");
@@ -40,13 +40,14 @@ export function LoginView() {
     // set the validated props to true so that the form.control.feedback messages will be displayed  
     setValidated(true);
   };
-
+  
   const handleRegister = (e) => {
     console.log('open registration form');
     navigate("/register");
   }
 
   let loggedinUser =  window.localStorage.getItem('user');
+ 
   if(loggedinUser) return window.open('/movies','_self');
 
   return (

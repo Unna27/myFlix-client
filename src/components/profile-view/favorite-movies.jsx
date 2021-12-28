@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import PropTypes from 'prop-types';
 import { MovieCard } from "../movie-card/movie-card";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export function FavMovies({favMovies}) {
   if (favMovies.length === 0)
-    return <p>You have no favorite Movies</p>
+    return <p>Favorite Movies List is empty</p>
   return (
      <Row className="justify-content-md-center">
         {favMovies.map(movie => (
@@ -17,3 +16,8 @@ export function FavMovies({favMovies}) {
       </Row>
   );
 }
+
+// define the property types of the prop acquired
+FavMovies.PropTypes = {
+  favMovies: PropTypes.array.isRequired
+};

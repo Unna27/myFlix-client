@@ -1,17 +1,14 @@
 import * as React from 'react';
-import {useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios'; // for async opns
-
-import { connect } from 'react-redux';
-
 import { Routes, Route } from 'react-router-dom';
 
 import Home from '../routes/Home';
 import { LoginView } from './login-view/login-view';
 import RegistrationView from './registration-view/registration-view';
 
-import { setMovies } from '../actions/actions';
+import { setMovies, setUser } from '../actions/actions';
 import { Movies } from '../routes/movies';
 import Movie from '../routes/movie';
 import Genre from '../routes/genre';
@@ -21,7 +18,6 @@ import Logout from '../routes/logout';
 
   const App = () => {
   
-   //const [movies, setMovies] = useState("");
   const dispatch = useDispatch();
   useEffect(()=>{
     // fetch movies list from API asynchronously
@@ -35,6 +31,7 @@ import Logout from '../routes/logout';
       // assign the result to the state var movies
       console.log(response.data);
       dispatch(setMovies(response.data));
+      dispatch(setUser(JSON.parse(localStorage.getItem('user'))));
       }).catch(error => {
          console.error();
       })
