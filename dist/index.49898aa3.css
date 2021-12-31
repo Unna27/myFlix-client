@@ -1,3 +1,4 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;1,700&display=swap";
 .movie-card {
   display: block;
   width: 100%;
@@ -7,6 +8,18 @@
   box-sizing: border-box;
   text-align: left;
 }
-
-
+* {
+  color: #241e4e;
+  font-weight: bold;
+}
+* {
+  color: #241e4e;
+  font-weight: bold;
+}
+.container {
+  background: #ecf0f3;
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
 /*# sourceMappingURL=index.49898aa3.css.map */

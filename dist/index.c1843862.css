@@ -1,9 +1,37 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;1,700&display=swap";
 * {
   color: #241e4e;
-  font-weight: bold;
+  font-weight: normal;
+}
+* {
+  color: #241e4e;
+  font-weight: normal;
+}
+.movie-card {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  text-align: left;
+}
+.main-view {
+  position: relative;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+* {
+  color: #241e4e;
+  font-weight: normal;
 }
 
+button.hidden {
+  display: none;
+}
 .container {
   background: #ecf0f3;
   display: flex;

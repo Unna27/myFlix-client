@@ -1,8 +1,11 @@
-$background-color : #ecf0f3;
+$background-color : #F6F3EE;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;1,700&display=swap');
 
+body{
+  background-color: $background-color !important;
+}
 .container {
-    background: $background-color;
+    
     display: flex;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
