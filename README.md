@@ -34,24 +34,24 @@ Home page
 * Allows users to add a movie to their list of favorites
 
 Login view
-● Allows users to log in with a username and password
+* Allows users to log in with a username and password
 
 Registration view
-● Allows new users to register (username, password, email, birthday)
+* Allows new users to register (username, password, email, birthday)
 
 Genre view
-● Returns data about a genre, with a name and description
-● Displays similar genre movies 
+* Returns data about a genre, with a name and description
+* Displays similar genre movies 
 
 Director view
-● Returns data about a director (name, bio, birth year, death year)
-● Displays movies created by the same director
+* Returns data about a director (name, bio, birth year, death year)
+* Displays movies created by the same director
 
 Profile view
-● Allows users to update their user info ( email, date of birth)
-● Allows existing users to deregister
-● Displays their favorite movies
-● Allows users to remove a movie from their list of favorites
+* Allows users to update their user info ( email, date of birth)
+* Allows existing users to deregister
+* Displays their favorite movies
+* Allows users to remove a movie from their list of favorites
 
 
 ## Screenshots
