@@ -28,13 +28,40 @@
 
 
 ## Features
-List the ready features here:
-- Lists all movie details
-- Login feature for users
-- Provides information about directors, general description of movies.
+Home page
+● Returns a list of all movies to the user (each listed item with an image, and title and a link to view full description of the movie)
+● filters movie list by title
+● Allows users to add a movie to their list of favorites
+
+Login view
+● Allows users to log in with a username and password
+
+Registration view
+● Allows new users to register (username, password, email, birthday)
+
+Genre view
+● Returns data about a genre, with a name and description
+● Displays similar genre movies 
+
+Director view
+● Returns data about a director (name, bio, birth year, death year)
+● Displays movies created by the same director
+
+Profile view
+● Allows users to update their user info ( email, date of birth)
+● Allows existing users to deregister
+● Displays their favorite movies
+● Allows users to remove a movie from their list of favorites
 
 
 ## Screenshots
+Home Page:
+
+![image](https://user-images.githubusercontent.com/58221568/147834271-69d971a8-8c99-4285-bd4d-048ae3f1e9c1.png)
+
+Profile View:
+
+![image](https://user-images.githubusercontent.com/58221568/147834289-910e0778-ec0e-46e3-88c7-dcced2ccb367.png)
 
 
 ## Setup
@@ -64,17 +91,9 @@ Project is: _in progress_
 
 ## Room for Improvement
 
-Single movie view and all movies views
-- Allow users to see which actors star in which movies
-- Allow users to view more information about different movies, such as the release date and the movie rating
-Actors view
-- Allows users to view information about different actors
-Profile view, single movie view, and all movies view
-- Allow users to create a “To Watch” list in addition to their “Favorite Movies” list
-
 To do:
-- Feature to be added 1
-- Feature to be added 2
+- Allow users to sort movies
+
 
 ## Acknowledgements
 - This project was based on the CareerFoundry tutorial (https://careerfoundry.com/en/courses/become-a-web-developer/)
