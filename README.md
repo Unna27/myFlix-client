@@ -29,9 +29,9 @@
 
 ## Features
 Home page
-● Returns a list of all movies to the user (each listed item with an image, and title and a link to view full description of the movie)
-● filters movie list by title
-● Allows users to add a movie to their list of favorites
+* Returns a list of all movies to the user (each listed item with an image, and title and a link to view full description of the movie)
+* filters movie list by title
+* Allows users to add a movie to their list of favorites
 
 Login view
 ● Allows users to log in with a username and password
