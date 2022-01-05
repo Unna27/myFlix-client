@@ -1,6 +1,6 @@
 # MyFlixApp
 > Using React, build the client side UI of myFlix application. It fetches data from Rest API and database
-> Live demo  [![Netlify Status](https://api.netlify.com/api/v1/badges/a6abaa1b-ba32-4e42-895e-91dc8cd46783/deploy-status)](https://app.netlify.com/sites/ur-myflixapp/deploys)
+> Live demo  https://my-flix-client-h9zela9kw-unna27.vercel.app/
 
 ## Table of Contents
 * [General Info](#general-information)
