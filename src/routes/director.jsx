@@ -1,3 +1,4 @@
+import React from 'react';
 import { useParams } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { DirectorView } from "../components/director-view/director-view";

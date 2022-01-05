@@ -41911,6 +41911,8 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
@@ -41935,7 +41937,7 @@ function Genre({ movieData  }) {
                 className: "justify-content-md-center",
                 __source: {
                     fileName: "src/routes/genre.jsx",
-                    lineNumber: 23,
+                    lineNumber: 24,
                     columnNumber: 7
                 },
                 __self: this,
@@ -41944,7 +41946,7 @@ function Genre({ movieData  }) {
                     md: 8,
                     __source: {
                         fileName: "src/routes/genre.jsx",
-                        lineNumber: 24,
+                        lineNumber: 25,
                         columnNumber: 9
                     },
                     __self: this,
@@ -41952,7 +41954,7 @@ function Genre({ movieData  }) {
                         genre: genre,
                         __source: {
                             fileName: "src/routes/genre.jsx",
-                            lineNumber: 25,
+                            lineNumber: 26,
                             columnNumber: 11
                         },
                         __self: this
@@ -41963,7 +41965,7 @@ function Genre({ movieData  }) {
                 moviesList: genreMoviesList,
                 __source: {
                     fileName: "src/routes/genre.jsx",
-                    lineNumber: 28,
+                    lineNumber: 29,
                     columnNumber: 6
                 },
                 __self: this
@@ -41990,7 +41992,7 @@ $RefreshReg$(_c, "Genre");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react-router-dom":"16kZP","../components/genre-view/genre-view":"eGJ1e","react-bootstrap/Row":"eR7YE","react-bootstrap/Col":"kxhZp","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","../components/movies-list/movies-list":"2BhWr","prop-types":"2bysO"}],"eGJ1e":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react-router-dom":"16kZP","../components/genre-view/genre-view":"eGJ1e","react-bootstrap/Row":"eR7YE","react-bootstrap/Col":"kxhZp","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","../components/movies-list/movies-list":"2BhWr","prop-types":"2bysO","react":"4mchR"}],"eGJ1e":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ec38 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42178,6 +42180,8 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
@@ -42202,7 +42206,7 @@ function Director({ movieData  }) {
                 className: "justify-content-md-center",
                 __source: {
                     fileName: "src/routes/director.jsx",
-                    lineNumber: 22,
+                    lineNumber: 23,
                     columnNumber: 7
                 },
                 __self: this,
@@ -42211,7 +42215,7 @@ function Director({ movieData  }) {
                     md: 8,
                     __source: {
                         fileName: "src/routes/director.jsx",
-                        lineNumber: 23,
+                        lineNumber: 24,
                         columnNumber: 9
                     },
                     __self: this,
@@ -42219,7 +42223,7 @@ function Director({ movieData  }) {
                         director: director,
                         __source: {
                             fileName: "src/routes/director.jsx",
-                            lineNumber: 24,
+                            lineNumber: 25,
                             columnNumber: 11
                         },
                         __self: this
@@ -42230,7 +42234,7 @@ function Director({ movieData  }) {
                 moviesList: directorMoviesList,
                 __source: {
                     fileName: "src/routes/director.jsx",
-                    lineNumber: 27,
+                    lineNumber: 28,
                     columnNumber: 7
                 },
                 __self: this
@@ -42257,7 +42261,7 @@ $RefreshReg$(_c, "Director");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react-router-dom":"16kZP","../components/director-view/director-view":"47DIu","react-bootstrap/Row":"eR7YE","react-bootstrap/Col":"kxhZp","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","../components/movies-list/movies-list":"2BhWr","prop-types":"2bysO"}],"47DIu":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react-router-dom":"16kZP","../components/director-view/director-view":"47DIu","react-bootstrap/Row":"eR7YE","react-bootstrap/Col":"kxhZp","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","../components/movies-list/movies-list":"2BhWr","prop-types":"2bysO","react":"4mchR"}],"47DIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$da2a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42447,6 +42451,8 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _home = require("./Home");
@@ -42456,7 +42462,6 @@ var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _profileView = require("../components/profile-view/profile-view");
 var _profileViewDefault = parcelHelpers.interopDefault(_profileView);
 var _favoriteMovies = require("../components/profile-view/favorite-movies");
-var _react = require("react");
 var _reactBootstrap = require("react-bootstrap");
 var _s = $RefreshSig$();
 function Profile({ movies  }) {
@@ -42489,7 +42494,7 @@ function Profile({ movies  }) {
     if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_homeDefault.default, {
         __source: {
             fileName: "src/routes/profile.jsx",
-            lineNumber: 36,
+            lineNumber: 37,
             columnNumber: 20
         },
         __self: this
@@ -42497,7 +42502,7 @@ function Profile({ movies  }) {
     if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("p", {
         __source: {
             fileName: "src/routes/profile.jsx",
-            lineNumber: 38,
+            lineNumber: 39,
             columnNumber: 14
         },
         __self: this,
@@ -42515,7 +42520,7 @@ function Profile({ movies  }) {
                 className: "justify-content-md-center",
                 __source: {
                     fileName: "src/routes/profile.jsx",
-                    lineNumber: 50,
+                    lineNumber: 51,
                     columnNumber: 7
                 },
                 __self: this,
@@ -42524,7 +42529,7 @@ function Profile({ movies  }) {
                         md: 8,
                         __source: {
                             fileName: "src/routes/profile.jsx",
-                            lineNumber: 51,
+                            lineNumber: 52,
                             columnNumber: 9
                         },
                         __self: this,
@@ -42532,7 +42537,7 @@ function Profile({ movies  }) {
                             user: user,
                             __source: {
                                 fileName: "src/routes/profile.jsx",
-                                lineNumber: 52,
+                                lineNumber: 53,
                                 columnNumber: 11
                             },
                             __self: this
@@ -42542,7 +42547,7 @@ function Profile({ movies  }) {
                         md: 2,
                         __source: {
                             fileName: "src/routes/profile.jsx",
-                            lineNumber: 54,
+                            lineNumber: 55,
                             columnNumber: 9
                         },
                         __self: this,
@@ -42551,7 +42556,7 @@ function Profile({ movies  }) {
                             onClick: handleUnregister,
                             __source: {
                                 fileName: "src/routes/profile.jsx",
-                                lineNumber: 55,
+                                lineNumber: 56,
                                 columnNumber: 11
                             },
                             __self: this,
@@ -42564,7 +42569,7 @@ function Profile({ movies  }) {
                 favMovies: favMoviesList,
                 __source: {
                     fileName: "src/routes/profile.jsx",
-                    lineNumber: 58,
+                    lineNumber: 59,
                     columnNumber: 7
                 },
                 __self: this
